@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast');
 
 //path dirname for start express and find location to templates
 const app = express();
+const port = process.env.PORT || 3000;
 const publicDirectory = path.join(__dirname, '../public');
 const secondaryDic = path.join(__dirname, '../templates/views');
 const thirdDic = path.join(__dirname, '../templates/partials');
@@ -101,6 +102,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('This server is run on port 3000')
+app.listen(port, () => {
+    console.log(`This server is run on port ${port}`)
 })
